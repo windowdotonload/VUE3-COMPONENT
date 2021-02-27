@@ -101,7 +101,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 
 export default defineComponent({
   name: "HelloWorld",
@@ -110,6 +110,9 @@ export default defineComponent({
     testNumber: {
       type: Number,
     },
+  },
+  render() {
+    h();
   },
   methods: {
     con() {
