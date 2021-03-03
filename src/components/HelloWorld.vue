@@ -111,9 +111,6 @@ export default defineComponent({
       type: Number,
     },
   },
-  render() {
-    h();
-  },
   methods: {
     con() {
       console.log(this.testNumber);
