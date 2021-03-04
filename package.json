@@ -11,7 +11,9 @@
     "ajv-formats": "^1.5.1",
     "ajv-i18n": "^3.6.0",
     "core-js": "^3.6.5",
+    "monaco-editor": "^0.22.3",
     "vue": "^3.0.0",
+    "vue-jss": "0.0.4",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
