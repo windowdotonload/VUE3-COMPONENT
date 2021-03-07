@@ -48,27 +48,27 @@ ajv.addKeyword('test',{
   //   return true
   // }
 
-  /*compile
+  /*compile*/
   compile(sch,parentSchema){
     console.log(sch,parentSchema)
     return (data) => {
       console.log('data',data)
     }
   },
-  // 这个关键字的值的定义，如test：false，那么之就是false，而非使用这个关键字的属性接受的值
+  // 这个关键字的值的定义，如test：false，那么值就是false，而非使用这个关键字的属性接受的值
   metaSchema:{
     type:'object'
   }
-  */
+  // */
 
   /* marco */
-  marco(sch,parentSchema){
+  // marco(sch,parentSchema){
     // 这里的参数和compile是一样的
     // return 的对象会直接加到使用这个关键字的属性身上，例如name会变为{type:"string",minLength:10,test: }
-    return {
-      minLength:10
-    }
-  }
+  //   return {
+  //     minLength:10
+  //   }
+  // }
 })
 
 
