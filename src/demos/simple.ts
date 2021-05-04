@@ -2,30 +2,30 @@ export default {
   name: 'Simple',
   schema: {
     description: 'A simple form example.',
-    type: 'object',
+    type: 'string',
     required: ['firstName', 'lastName'],
     properties: {
       firstName: {
         type: 'string',
-        default: 'Chuck',
+        default: 'Chuck'
       },
       lastName: {
-        type: 'string',
+        type: 'string'
       },
       telephone: {
         type: 'string',
-        minLength: 10,
+        minLength: 10
       },
       staticArray: {
         type: 'array',
         items: [
           {
-            type: 'string',
+            type: 'string'
           },
           {
-            type: 'number',
-          },
-        ],
+            type: 'number'
+          }
+        ]
       },
       singleTypeArray: {
         type: 'array',
@@ -33,36 +33,36 @@ export default {
           type: 'object',
           properties: {
             name: {
-              type: 'string',
+              type: 'string'
             },
             age: {
-              type: 'number',
-            },
-          },
-        },
+              type: 'number'
+            }
+          }
+        }
       },
       multiSelectArray: {
         type: 'array',
         items: {
           type: 'string',
-          enum: ['123', '456', '789'],
-        },
-      },
-    },
+          enum: ['123', '456', '789']
+        }
+      }
+    }
   },
   uiSchema: {
     title: 'A registration form',
     properties: {
       firstName: {
-        title: 'First name',
+        title: 'First name'
       },
       lastName: {
-        title: 'Last name',
+        title: 'Last name'
       },
       telephone: {
-        title: 'Telephone',
-      },
-    },
+        title: 'Telephone'
+      }
+    }
   },
   default: {
     firstName: 'Chuck',
@@ -70,6 +70,6 @@ export default {
     age: 75,
     bio: 'Roundhouse kicking asses since 1940',
     password: 'noneed',
-    singleTypeArray: [{ name: 'jokcy', age: 12 }],
-  },
+    singleTypeArray: [{ name: 'jokcy', age: 12 }]
+  }
 }

@@ -5,7 +5,7 @@ import MonacoEditor from '@/components/monacoEditor'
 
 import demos from './demos'
 
-// import SchemaForm from '../lib'
+import SchemaForm from '../lib'
 
 // TODO: 在lib中export
 type Schema = any
@@ -70,7 +70,9 @@ const useStyles = createUseStyles({
 })
 
 export default defineComponent({
-  setup() {
+  setup(props, context) {
+    console.log('context is =====>', context)
+
     const selectedRef: Ref<number> = ref(0)
 
     const demo: {
@@ -158,7 +160,7 @@ export default defineComponent({
               </div>
             </div>
             <div class={classes.form}>
-              {/* <SchemaForm schema={demo.schema} onChange={handleChange} value={demo.data} /> */}
+              <SchemaForm schema={demo.schema} onChange={handleChange} value={demo.data} />
               {/* <SchemaForm
                 schema={demo.schema!}
                 uiSchema={demo.uiSchema!}
