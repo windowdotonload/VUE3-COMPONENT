@@ -1,6 +1,6 @@
 import { defineComponent, ref, Ref, reactive, watchEffect, PropType } from 'vue'
 import { Schema, SchemaTypes } from '../types'
-import St from './stringField.vue'
+// import St from './stringField.vue'
 
 export default defineComponent({
   name: 'numberField',
@@ -18,19 +18,19 @@ export default defineComponent({
     }
   },
   setup(props) {
-    console.log('this is props in numberFIELD.TSX', props)
-    let arr = [
-      {
-        a: 'this is a'
-      },
-      {
-        a: 'this is b'
-      }
-    ]
+    // console.log('this is props in numberFIELD.TSX', props)
+    // let arr = [
+    //   {
+    //     a: 'this is a'
+    //   },
+    //   {
+    //     a: 'this is b'
+    //   }
+    // ]
     return () => {
       return (
         <div>
-          <St {...props} testarr={arr}></St>
+          {/* <St {...props} testarr={arr}></St> */}
           <h1>this is numberField</h1>
         </div>
       )
