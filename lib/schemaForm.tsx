@@ -1,6 +1,12 @@
-import { defineComponent, ref, Ref, reactive, watchEffect, PropType } from 'vue'
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: windowdotonload
+ */
+import { defineComponent, ref, Ref, reactive, watchEffect, PropType, provide } from 'vue'
 import { Schema, SchemaTypes } from './types'
 import SchemaItem from './schemaItem'
+import { SchemaFormContextKey } from './context'
 
 export default defineComponent({
   name: 'schemaform',
@@ -18,9 +24,9 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    console.log('this is props', props)
+    provide(SchemaFormContextKey, SchemaItem)
     return () => {
-      let handleChange = function(v: any) {
+      let handleChange = function (v: any) {
         props.onChange(v)
       }
       let { schema, value } = props
