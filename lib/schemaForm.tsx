@@ -23,8 +23,11 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props, context) {
-    provide(SchemaFormContextKey, SchemaItem)
+  setup(props) {
+    const context = {
+      SchemaItem
+    }
+    provide(SchemaFormContextKey, context)
     return () => {
       let handleChange = function (v: any) {
         props.onChange(v)
