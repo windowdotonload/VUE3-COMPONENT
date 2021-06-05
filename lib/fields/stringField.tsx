@@ -1,3 +1,8 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: windowdotonload
+ */
 import { defineComponent, ref, Ref, reactive, watchEffect, PropType } from 'vue'
 import { Schema, SchemaTypes } from '../types'
 
@@ -16,11 +21,16 @@ export default defineComponent({
       required: true
     }
   },
-  setup() {
+  setup(props) {
+    const handleChange = (e: any) => {
+      console.log(e)
+      props.onChange(e.target.value)
+    }
     return () => {
       return (
         <div>
-          <h1>this is stringField</h1>
+          <span>this is stringField</span>
+          <input type="text" value={props.value as any} onInput={handleChange} />
         </div>
       )
     }
