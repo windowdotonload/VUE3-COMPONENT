@@ -1,3 +1,8 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: windowdotonload
+ */
 import { PropType, defineComponent } from 'vue'
 
 export enum SchemaTypes {
@@ -65,3 +70,8 @@ export const FieldPropsDefine = {
     required: true
   }
 } as const
+
+export const typeHelperComponent = defineComponent({
+  props: FieldPropsDefine
+})
+export type CommonFieldType = typeof typeHelperComponent

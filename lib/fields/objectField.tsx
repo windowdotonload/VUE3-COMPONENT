@@ -14,15 +14,11 @@
  * @Author: windowdotonload
  */
 import { defineComponent, ref, Ref, reactive, watchEffect, PropType, computed, inject } from 'vue'
-import { Schema, SchemaTypes, FieldPropsDefine } from '../types'
-import { SchemaFormContextKey } from '../context'
+import { Schema, SchemaTypes, FieldPropsDefine, CommonFieldType } from '../types'
+import { SchemaFormContextKey, useVJSFContext } from '../context'
 import { Type } from 'ajv/dist/compile/subschema'
 import { isObject } from '../utils'
 
-const typeHelperComponent = defineComponent({
-  props: FieldPropsDefine
-})
-type SchemaItemDefine = typeof typeHelperComponent
 
 export default defineComponent({
   props: FieldPropsDefine,
@@ -30,11 +26,7 @@ export default defineComponent({
 
   setup(props) {
 
-    const context: { SchemaItem: SchemaItemDefine } | undefined = inject(SchemaFormContextKey)
-
-    if (!context) {
-      throw Error('schamaform should be used')
-    }
+    const context = useVJSFContext()
 
     const handleObjectChange = (key: string, v: any) => {
       const value: any = isObject(props.value) ? props.value : {}
@@ -47,6 +39,7 @@ export default defineComponent({
 
       props.onChange(v)
     }
+
     return () => {
       const { schema, rootSchema, value } = props
       const { SchemaItem } = context
