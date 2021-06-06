@@ -1,8 +1,14 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: windowdotonload
+ */
 import { defineComponent, ref, Ref, reactive, watchEffect, PropType, computed } from 'vue'
 import { Schema, SchemaTypes, FieldPropsDefine } from './types'
 import numberField from './fields/numberField'
 import stringField from './fields/stringField'
 import objectField from './fields/objectField'
+import arrayField from './fields/arrayField'
 import { retrieveSchema } from './utils'
 
 export default defineComponent({
@@ -29,6 +35,9 @@ export default defineComponent({
           break
         case SchemaTypes.OBJECT:
           Component = objectField
+          break
+        case SchemaTypes.ARRAY:
+          Component = arrayField
           break
       }
       return <Component {...props} />
